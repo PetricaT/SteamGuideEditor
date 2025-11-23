@@ -1,4 +1,4 @@
-let version = "0.0.1";
+let version = "0.1.0";
 let minWidth = 983;
 let windowWidth = window.innerWidth;
 

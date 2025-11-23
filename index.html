@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Steam Guide editor</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
+    <script src="codeHandler.js" defer></script>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
 </head>
+
 <body>
     <div id="infobar">
         <div id="infobar-title">
-            Online Steam Guide editor | <p class="version">v{{version}}</p> | Minimum width: 983px | Window width: {{windowWidth}}
+            Online Steam Guide editor | <p class="version">v{{version}}</p> | Minimum width: 983px | Window width:
+            {{windowWidth}}
         </div>
     </div>
+    <!-- <div id="info">
+        <h4>About</h4>
+        <br>
+        This is a very experimental project. Don't expect it to work properly. 
+        Currently, it doesn't even support all the steam tags, only a few.
+        <br><br>
+        It has support for:
+        <ul>
+            <li>bold</li>
+            <li>italics</li>
+            <li>underline</li>
+            <li>strikethrough</li>
+            <li>simple links</li>
+        </ul>
+    </div> -->
     <div id="app">
         <div id="markdown">
             <div class="panel-header">Editor</div>
-            <textarea id="editor" placeholder="Write your guide :3"></textarea>
+            <div id="editor-settings">
+                <input type="checkbox" id="wrap-text" onchange="updatePreview('wrap-text')">
+                <label for="wrap-text">Wrap-around text</label>
+            </div>
+            
+            <div id="editor-wrapper">
+                <div id="line-numbers"></div>
+                <textarea spellcheck="false" id="editor" onkeyup='saveValue(this); updateLineNumbers()' placeholder="Write your guide :3">
+                </textarea>
+            </div>
         </div>
         <div id="preview">
             <div class="panel-header">Preview</div>
             <div id="preview-container">
-                PREVIEW <a href="#">CONTAINER</a>
             </div>
         </div>
     </div>

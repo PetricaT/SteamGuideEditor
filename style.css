@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/motiva-sans');
 @import url('https://fonts.cdnfonts.com/css/noto-sans');
 
-:root{
+:root {
     --Blue: #1A9FFF;
     --BlueHi: #00BBFF;
     --GreenLow: #536904;
@@ -16,7 +16,7 @@
     --ChalkyBlue: #66C0F4;
 }
 
-html{
+html {
     font-family: "Motiva Sans", Meiryo, "Noto Sans" !important;
     font-size: 20px;
     height: 100%;
@@ -27,29 +27,78 @@ html{
     color: #fff;
 }
 
-p.version{
+p.version {
     all: unset;
     color: #b4b4b4;
 }
 
-p.width-error{
+p.width-error {
     all: unset;
     color: red;
 }
 
-p.fade-in{
-    all: unset;
-}
-
-body{
+body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-#infobar{
+#info{
+    z-index: 999 !important;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    background-color: #121820;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 15px;
+    text-align: left;
+}
+
+#app{
+    z-index: 0;
+    height: 100%;
+}
+
+#line-numbers {
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background-color: #121820;
+    color: #fff;
+    font-size: small;
+    padding-right: 5px;
+    padding-top: 5px;
+    text-align: right;
+    border-right: solid 1px #686868;
+    z-index: 1;
+}
+
+#line-numbers > span {
+    display: block;
+}
+
+#editor-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+#editor {
+    padding-left: 40px;
+    white-space: pre;
+}
+
+.untrusted-domain {
+    all: unset;
+    font-size: 10px;
+    color: #7e8391;
+    padding: 4px;
+}
+
+#infobar {
     background: linear-gradient(to bottom, var(--Green), var(--GreenLow));
-    border-top: solid 1px  var(--GreenHi);
+    border-top: solid 1px var(--GreenHi);
     border-radius: 5px 5px 1px 1px;
     color: #fff;
     font-size: medium;
@@ -59,32 +108,39 @@ body{
     white-space: nowrap;
 }
 
-.panel-header{
+.panel-header {
     font-size: large;
     border-bottom: 1px solid #686868;
     margin-bottom: 20px;
     align-self: center;
 }
 
-#app{
+#app {
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
-#markdown{
+#markdown {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     min-width: 300px;
 }
 
-textarea#editor{
+#editor-settings {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #969696;
+    font-size: small;
+}
+
+textarea#editor {
     min-width: 300px;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 5px;
     background-color: #121820;
     color: #fff;
     border: none;
@@ -92,14 +148,16 @@ textarea#editor{
 }
 
 textarea#editor:active,
-textarea#editor:focus{
+textarea#editor:focus {
     outline: none;
     border: none;
 }
 
-#preview{
+#preview {
     /* Steam uses a constant 638px width */
     min-width: 638px;
+    max-width: 638px;
+    width: 638px;
 
     display: flex;
     flex-direction: column;
@@ -109,21 +167,21 @@ textarea#editor:focus{
     border-left: solid 1px #686868;
 }
 
-#preview-container{
+#preview-container {
     /* Steam's font color */
-    color: #969696 
+    color: #969696
 }
 
-#preview-container .header{
+#preview-container .header {
     color: #66C0F4;
 }
 
-#preview-container a{
+#preview-container a {
     text-decoration: none;
     color: #fff;
 }
 
 #preview-container a:hover {
-  text-decoration: none;
-  color: #66C0F4;
+    text-decoration: none;
+    color: #66C0F4;
 }
