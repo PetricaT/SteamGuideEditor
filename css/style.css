@@ -235,7 +235,7 @@ textarea#editor:focus {
     color: #acb2b8;
     text-align: left;
 
-    background: url('./images/content_footer_fade.png') bottom right no-repeat, url('./images/group_content_topbackground.png') 0px 8px no-repeat, url('./images/content_header_rule.png') -4px 0px no-repeat;
+    background: url('../images/content_footer_fade.png') bottom right no-repeat, url('../images/group_content_topbackground.png') 0px 8px no-repeat, url('../images/content_header_rule.png') -4px 0px no-repeat;
     padding-bottom: 8px;
     margin-bottom: 16px;
 }
