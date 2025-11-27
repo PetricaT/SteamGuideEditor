@@ -1,6 +1,6 @@
 # Guide editing made easy
 
-EDITOR: [Github Page](https://petricat.github.io/SteamGuideEditor/)
+EDITOR: [Github Page](https://petricat.github.io/SteamMarkdownEditor/)
 
 ---
 
