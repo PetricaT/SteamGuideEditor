@@ -58,6 +58,12 @@ function parseMarkdown() {
     // Parse strike tags
     text = text.replaceAll("[strike]", "<s>");
     text = text.replaceAll("[/strike]", "</s>");
+    // Parse spoiler
+    text = text.replaceAll("[spoiler]", "<span><span class='preview-spoiler'>");
+    text = text.replaceAll("[/spoiler]", "</span></span>");
+    // Parse headear1
+    text = text.replaceAll("[h1]", "<h1 class='preview-header'>");
+    text = text.replaceAll("[/h1]", "</h1>");
     // Parse newlines
     text = text.replaceAll(/\n/g, "<br>");
     // Parse hyperlinks
